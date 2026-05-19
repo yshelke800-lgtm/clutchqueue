@@ -1,0 +1,130 @@
+.mt-page { min-height: 100vh; padding-bottom: 60px; }
+
+.mt-header {
+  padding: 100px 0 32px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.12) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.mt-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mt-game-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mt-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mt-meta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.mt-controls { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+.mt-winner-badge {
+  padding: 8px 16px;
+  background: rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: gold;
+}
+
+/* Tabs */
+.mt-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pd-tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+  text-transform: capitalize;
+}
+.pd-tab:hover { color: var(--text-primary); }
+.pd-tab.active { color: var(--primary-light); border-bottom-color: var(--primary); }
+
+/* Overview */
+.mt-overview { display: flex; flex-direction: column; gap: 20px; }
+.mt-progress-card { }
+
+/* Teams */
+.mt-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.mt-team-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.mt-team-rank {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.mt-team-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Winner Modal */
+.winner-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.winner-option:hover { border-color: var(--primary); background: rgba(124,58,237,0.06); }
+.winner-option.selected { border-color: var(--neon-green); background: rgba(0,255,135,0.06); }
+
+@media (max-width: 768px) {
+  .mt-teams-grid { grid-template-columns: 1fr; }
+  .mt-header-content { flex-direction: column; }
+}

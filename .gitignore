@@ -1,0 +1,27 @@
+# ClutchQueue - Root .gitignore
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files (NEVER commit these)
+.env
+**/.env
+.env.local
+.env.production
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite cache
+.vite/
+**/.vite/

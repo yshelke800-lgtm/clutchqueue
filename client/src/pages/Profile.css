@@ -1,0 +1,24 @@
+.profile-page { min-height: 100vh; padding-bottom: 60px; }
+.profile-hero { padding: 120px 0 40px; background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.12) 0%, transparent 60%); border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+.profile-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+.profile-left { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 90px; }
+.profile-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 32px 24px; }
+.profile-avatar-wrapper { position: relative; margin-bottom: 8px; }
+.profile-avatar { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; border: 3px solid var(--border-accent); }
+.profile-avatar-fallback { width: 96px; height: 96px; border-radius: 50%; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 2.4rem; }
+.profile-avatar-edit { position: absolute; bottom: 0; right: 0; width: 28px; height: 28px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; border: 2px solid var(--bg-card); }
+.profile-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; }
+.profile-email { font-size: 0.82rem; color: var(--text-muted); }
+.profile-stats { }
+.profile-stat-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.profile-stat-row:last-child { border-bottom: none; }
+.profile-stat-label { color: var(--text-secondary); }
+.profile-stat-value { font-weight: 700; }
+.profile-right { }
+.profile-form { display: flex; flex-direction: column; gap: 18px; }
+.profile-bio { resize: vertical; min-height: 80px; }
+.avatar-preview-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.input-icon { position: absolute; left: 14px; color: var(--text-muted); pointer-events: none; }
+.input-with-icon { padding-left: 44px !important; }
+.input-wrapper { position: relative; display: flex; align-items: center; }
+@media (max-width: 900px) { .profile-layout { grid-template-columns: 1fr; } .profile-left { position: static; } }

@@ -1,0 +1,94 @@
+.lb-page { min-height: 100vh; padding-bottom: 60px; }
+
+.lb-hero {
+  padding: 120px 0 48px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.lb-body {}
+
+/* Podium */
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  padding: 24px 0;
+}
+
+.podium-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding-bottom: 24px;
+  width: 140px;
+}
+
+.pos-1 { order: 2; transform: translateY(-20px); }
+.pos-2 { order: 1; }
+.pos-3 { order: 3; }
+
+.podium-rank { font-size: 1.6rem; }
+
+.podium-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: 3px solid var(--border-bright);
+}
+
+.pos-1 .podium-avatar { width: 68px; height: 68px; border-color: gold; box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+.pos-2 .podium-avatar { border-color: silver; }
+.pos-3 .podium-avatar { border-color: #cd7f32; }
+
+.podium-name { font-weight: 700; font-size: 0.95rem; text-align: center; }
+.podium-game { font-size: 0.75rem; font-weight: 600; }
+.podium-wins { font-size: 0.8rem; color: var(--text-muted); }
+
+.podium-base {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.base-1 { height: 60px; background: linear-gradient(180deg, rgba(255,215,0,0.2), rgba(255,215,0,0.05)); border: 1px solid rgba(255,215,0,0.3); }
+.base-2 { height: 40px; background: linear-gradient(180deg, rgba(192,192,192,0.15), transparent); border: 1px solid rgba(192,192,192,0.2); }
+.base-3 { height: 28px; background: linear-gradient(180deg, rgba(205,127,50,0.15), transparent); border: 1px solid rgba(205,127,50,0.2); }
+
+/* Table */
+.lb-rank { font-size: 1rem; }
+
+.lb-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.lb-winrate {
+  font-weight: 600;
+  color: var(--accent-light);
+}
+
+.top-row td { background: rgba(124,58,237,0.04); }
+
+@media (max-width: 768px) {
+  .podium { gap: 8px; }
+  .podium-card { width: 100px; }
+}

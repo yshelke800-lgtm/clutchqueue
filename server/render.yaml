@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: clutchqueue-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        value: mongodb+srv://yash8679:yash8679@cluster0.kplcv9z.mongodb.net/clutchqueue
+      - key: JWT_SECRET
+        value: clutchqueue_super_secret_jwt_key_2025
+      - key: CLIENT_URL
+        value: https://clutchqueue.vercel.app
+      - key: NODE_ENV
+        value: production
