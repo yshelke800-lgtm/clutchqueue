@@ -12,6 +12,6 @@ services:
       - key: JWT_SECRET
         value: clutchqueue_super_secret_jwt_key_2025
       - key: CLIENT_URL
-        value: https://clutchqueue.vercel.app
+        value: https://clutchqueue-6sm5.vercel.app
       - key: NODE_ENV
         value: production
