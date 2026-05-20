@@ -180,15 +180,22 @@ export default function TournamentDetail() {
                       <label className="form-label">Select Your Team</label>
                       <select className="form-select" value={selectedTeam} onChange={e => setSelectedTeam(e.target.value)}>
                         <option value="">-- Choose team --</option>
-                        {myTeams.filter(tm => tm.game === t.game).map(tm => (
-                          <option key={tm._id} value={tm._id}>{tm.name}</option>
+                        {myTeams.map(tm => (
+                          <option key={tm._id} value={tm._id}>{tm.name} ({tm.game?.toUpperCase()})</option>
                         ))}
                       </select>
-                      {myTeams.filter(tm => tm.game === t.game).length === 0 && (
-                        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: 6 }}>No {t.game?.toUpperCase()} teams found. Create one first.</p>
+                      {myTeams.length === 0 && (
+                        <p style={{ fontSize: '0.8rem', color: 'var(--neon-pink)', marginTop: 6 }}>
+                          ⚠️ You have no teams! <a href="/teams" style={{ color: 'var(--primary-light)' }}>Create a {t.game?.toUpperCase()} team first →</a>
+                        </p>
+                      )}
+                      {myTeams.length > 0 && myTeams.filter(tm => tm.game === t.game).length === 0 && (
+                        <p style={{ fontSize: '0.8rem', color: 'var(--neon-pink)', marginTop: 6 }}>
+                          ⚠️ No {t.game?.toUpperCase()} team found. <a href="/teams" style={{ color: 'var(--primary-light)' }}>Create one →</a>
+                        </p>
                       )}
                     </div>
-                    <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: 12 }} onClick={handleRegister} disabled={registering} id="register-team-btn">
+                    <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: 12 }} onClick={handleRegister} disabled={registering || !selectedTeam} id="register-team-btn">
                       {registering ? <><Loader size={14} className="animate-spin" /> Registering...</> : 'Register Team'}
                     </button>
                   </>
